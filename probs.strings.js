@@ -189,19 +189,43 @@
 // Output: false
 
 // function isValid(s) {
-  // let hash = { "(": ")", "[": "]", "{": "}" };
-  //   if (s.length % 2 === 1) return false
-  //   if (s[0] === "]" || s[0] === ")" || s[0] === "}") return false
-  //   if (s[s.length - 1] === "[" || s[s.length - 1] === "(" || s[s.length - 1] === "{") return false
-  //   let stack = []
-  //   for(let i=0; i<s.length; i++) {
-  //       if(s[i] === "[" || s[i] === "(" || s[i] === "{") {
-  //           stack.push(s[i])
-  //       } else if (hash[stack.pop()] !== s[i]) {
-  //           return false
-  //       } 
-  //   }
-  //   return stack.length === 0
+// let hash = { "(": ")", "[": "]", "{": "}" };
+//   if (s.length % 2 === 1) return false
+//   if (s[0] === "]" || s[0] === ")" || s[0] === "}") return false
+//   if (s[s.length - 1] === "[" || s[s.length - 1] === "(" || s[s.length - 1] === "{") return false
+//   let stack = []
+//   for(let i=0; i<s.length; i++) {
+//       if(s[i] === "[" || s[i] === "(" || s[i] === "{") {
+//           stack.push(s[i])
+//       } else if (hash[stack.pop()] !== s[i]) {
+//           return false
+//       }
+//   }
+//   return stack.length === 0
 // }
 
 // console.log(isValid("{}{}{}"));
+
+////////////////////////////////////   length of last word     ///////////////////////////////
+
+// Input: s = "Hello World"
+// Output: 5
+// Explanation: The last word is "World" with length 5.
+
+// Input: s = "   fly me   to   the moon  "
+// Output: 4
+// Explanation: The last word is "moon" with length 4.
+
+function lolw(str) {
+  let splitUp = str.split(" ");
+  let actualWords = [];
+  for (let i = 0; i < splitUp.length; i++) {
+    if (splitUp[i].length) {
+      actualWords.push(splitUp[i]);
+    }
+  }
+  let lastWord = actualWords[actualWords.length - 1];
+  return lastWord.length;
+}
+
+console.log(lolw("luffy is still joyboy"));

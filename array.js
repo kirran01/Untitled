@@ -183,19 +183,21 @@
 // Input: nums = [1,3,5,6], target = 2
 // Output: 1
 
-function searchInsert(nums, target) {
-  let found = nums.findIndex((el) => el === target);
-  if (found === -1) {
-    for (let i = 0; i < nums.length; i++) {
-      if (nums[i] > target) {
-        return i;
-      }
-      if (i === nums.length - 1) {
-        return nums.length;
-      }
-    }
-  }
-  return found;
-}
+// function searchInsert(nums, target) {
+//   let found = nums.findIndex((el) => el === target);
+//   if (found === -1) {
+//     for (let i = 0; i < nums.length; i++) {
+//       if (nums[i] > target) {
+//         return i;
+//       }
+//       if (i === nums.length - 1) {
+//         return nums.length;
+//       }
+//     }
+//   }
+//   return found;
+// }
+// console.log(searchInsert([2, 4, 5, 6], 7));
 
-console.log(searchInsert([2, 4, 5, 6], 7));
+
+
