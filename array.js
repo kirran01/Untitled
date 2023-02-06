@@ -106,20 +106,96 @@
 
 /////////////////////////////  remove dups ///////////////
 
-// Input: nums = [1,1,2]
-// Output: 2, nums = [1,2,_]
+// function rd(nums) {
+//   let j = 1;
+//   for (let i = 0; i < nums.length-1; i++) {
+//     console.log('i:',i)
+//     console.log('       j:',j)
+//     if (nums[i] !== nums[i + 1]) {
+//       nums[j] = nums[i + 1];
+//       j++;
+//     }
+//   }
+//   return j;
+// }
+// console.log(rd([0, 1, 1, 2]));
 
-// Input: nums = [0,0,1,1,1,2,2,3,3,4]
-// Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+//  i
+//    j
+// [0,1,1,2]
 
-const removeDuplicates = (nums) => {
-    let i = 0;
-    for (let j = 1; j < nums.length; j++) {
-      if (nums[j] !== nums[i]) {
-        nums[i+1] = nums[j];
+//    i
+//      j
+// [0,1,1,2]
+
+//      i
+//      j
+// [0,1,1,2]
+
+//      i
+//        j
+// [0,1,2,1]
+
+//////////////////////         Remove element      ////////////////////
+
+// Input: nums = [0,1,2,2,3,0,4,2], val = 2
+// Output: 5, nums = [0,1,4,0,3,_,_,_]
+
+// var removeElement = function(nums, val) {
+//   let j=nums.length;
+//   for(let i=0;i<nums.length;i++){
+//       if(nums[i]==val){
+//           nums[i] = '_';
+//           j-=1;
+//       }
+//   }
+//   nums.sort();
+//   console.log(nums,j)
+//   return j;
+// };
+
+// console.log(removeElement([3,2,2,3], 3));
+
+//i
+//       j
+//[3,2,2,3]
+
+//   i
+//     j
+//[_,2,2,3]
+
+//     i
+//     j
+//[_,2,2,3]
+
+//        i
+//     j
+//[_,2,2,3]
+
+//        i
+//   j
+//[_,2,2,_]
+
+/////////////////////////////////    search insert position       /////////////////////////
+
+// Input: nums = [1,3,5,6], target = 5
+// Output: 2
+// Input: nums = [1,3,5,6], target = 2
+// Output: 1
+
+function searchInsert(nums, target) {
+  let found = nums.findIndex((el) => el === target);
+  if (found === -1) {
+    for (let i = 0; i < nums.length; i++) {
+      if (nums[i] > target) {
+        return i;
+      }
+      if (i === nums.length - 1) {
+        return nums.length;
       }
     }
-    return i+1;
-  };
-  
-console.log(removeDuplicates([1,1,2]));
+  }
+  return found;
+}
+
+console.log(searchInsert([2, 4, 5, 6], 7));
