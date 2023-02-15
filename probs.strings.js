@@ -161,6 +161,8 @@
 // let testStr = "aaabcccdde";
 // console.log(compress(testStr));
 
+////////////// gcd of 2 strings ////////////
+
 // function gcd(str1, str2) {
 //   if (str1 + str2 != str2 + str1) return "";
 //   let compare = (w, str) => {
@@ -216,16 +218,38 @@
 // Output: 4
 // Explanation: The last word is "moon" with length 4.
 
-function lolw(str) {
-  let splitUp = str.split(" ");
-  let actualWords = [];
-  for (let i = 0; i < splitUp.length; i++) {
-    if (splitUp[i].length) {
-      actualWords.push(splitUp[i]);
-    }
-  }
-  let lastWord = actualWords[actualWords.length - 1];
-  return lastWord.length;
-}
+// function lolw(str) {
+//   let splitUp = str.split(" ");
+//   let actualWords = [];
+//   for (let i = 0; i < splitUp.length; i++) {
+//     if (splitUp[i].length) {
+//       actualWords.push(splitUp[i]);
+//     }
+//   }
+//   let lastWord = actualWords[actualWords.length - 1];
+//   return lastWord.length;
+// }
 
-console.log(lolw("luffy is still joyboy"));
+// console.log(lolw("luffy is still joyboy"));
+
+////////////////////////////////////   Plus one     ///////////////////////////////
+
+// Input: digits = [4,3,2,1]
+// Output: [4,3,2,2]
+
+// Input: digits = [9]
+// Output: [1,0]
+
+// var plusOne = function(digits) {
+//     const fromArray = digits.join(''); // get Digits out of Array
+//     const toInt = BigInt(fromArray) ; //Dont use parseInt, use BigInt instead :)
+//     console.log(toInt)
+//     const addOne = toInt + 1n; // add one!
+//     console.log(addOne)
+//     const result =  Array.from(String(addOne), Number); // return digits to array
+//     return result
+// };
+
+// console.log(plusOne([1,2,3]));
+
+

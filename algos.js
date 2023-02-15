@@ -91,25 +91,46 @@ let nums = [8, 20, -2, 4, -6];
 
 //time complexity = O(n*logn)
 
-// <<<<<<<<<<<<<<<<<<<< AI Binary Search >>>>>>>>>>>>>>>>>>>>
+///////// Fib until n ////////////
 
-// const binarySearch = (arr, target) => {
+// function fibn(n) {
+//   let arr = [0, 1];
+//   for (let i = 2; i < n; i++) {
+//     arr[i] = arr[i - 1] + arr[i - 2];
+//   }
+//   return arr;
+// }
+
+//////////////// Binary search   ///////////////////
+
+// function bs(arr, tar) {
+//   if (!arr.length) return -1;
 //   let left = 0;
 //   let right = arr.length - 1;
 //   while (left <= right) {
-//     const mid = Math.floor((left + right) / 2);
-//     const midValue = arr[mid];
-//     if (midValue === target) {
-//       return mid;
-//     } else if (midValue < target) {
-//       left = mid + 1;
-//     } else {
-//       right = mid - 1;
-//     }
+//     let mid = Math.floor((left + right) / 2);
+//     if (tar === arr[mid]) return mid;
+//     if (tar < arr[mid]) right = mid - 1;
+//     if (tar > arr[mid]) left = mid + 1;
 //   }
-//   return false;
-// };
+//   return -1;
+// }
 
-// const target = 4;
-// const index = binarySearch(nums, target);
-// console.log(index);
+console.log(bs([1,2,5,6,9], 2));
+
+//      m
+//  l       
+//          r
+// [1,2,5,6,9]
+
+//  m
+//  l   
+//    r
+// [1,2,5,6,9]
+
+//    m
+//    l
+//    r
+// [1,2,5,6,9]
+
+
