@@ -116,7 +116,7 @@ let nums = [8, 20, -2, 4, -6];
 //   return -1;
 // }
 
-console.log(bs([1,2,5,6,9], 2));
+// console.log(bs([1,2,5,6,9], 2));
 
 //      m
 //  l       
