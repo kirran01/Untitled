@@ -116,15 +116,15 @@ let nums = [8, 20, -2, 4, -6];
 //   return -1;
 // }
 
-// console.log(bs([1,2,5,6,9], 2));
+// console.log(bs([1, 2, 5, 6, 9], 6));
 
 //      m
-//  l       
+//  l
 //          r
 // [1,2,5,6,9]
 
 //  m
-//  l   
+//  l
 //    r
 // [1,2,5,6,9]
 
@@ -133,4 +133,31 @@ let nums = [8, 20, -2, 4, -6];
 //    r
 // [1,2,5,6,9]
 
+function bs(arr, tar) {
+  let left = 0;
+  let right = arr.length - 1;
+  while (left <= right) {
+    let middle = Math.floor((left + right) / 2);
+    if (tar === arr[middle]) return middle;
+    if (tar > arr[middle]) left = left + 1;
+    if (tar < arr[middle]) right = right - 1;
+  }
+  return -1;
+}
 
+function bs2(arr, tar) {
+  let left = 0;
+  let right = arr.length - 1;
+  while (left < right) {
+    let middle = Math.floor((left + right) / 2);
+    if (tar == arr[middle]) return middle;
+    if (tar > arr[middle]) {
+      left = middle + 1;
+    } else {
+      right = middle - 1;
+    }
+  }
+  return -1;
+}
+
+console.log(bs2([1, 2, 5, 6, 9], 6));

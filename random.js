@@ -145,7 +145,7 @@
 
 // console.log(palindromeNum(testNum));
 
-/// 
+///
 
 // let arr=[
 //   { id: 1, val: "a", owner:'bob', runtime:'10' },
@@ -153,5 +153,10 @@
 //   { id: 3, val: "c",owner:'steve', runtime:'15' },
 // ]
 
-
 ///
+
+let testArr = [
+  { a: 1, b: 1, c: 1 },
+  { a: 2, b: 2, c: 2 },
+  { a: 3, b: 3, c: 3 },
+];
